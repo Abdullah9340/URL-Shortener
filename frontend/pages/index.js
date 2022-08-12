@@ -1,20 +1,19 @@
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./index.module.scss";
-import Modal from "../components/Modal/Modal";
+import Modal from "../components/URLModal/URLModal";
+import QRModal from "../components/QRModal/QRModal";
+import { useState } from "react";
+
 export default function Home() {
+  const [navigation, setNavigation] = useState("URL Short");
   return (
     <div className={styles.background}>
       <Navbar />
-      <Modal />
+      {navigation === "URL Short" ? (
+        <Modal setNavigation={setNavigation} />
+      ) : (
+        <QRModal setNavigation={setNavigation} />
+      )}
     </div>
   );
 }
-// Todo
-/*
-Create field on homepage for adding urls to database and return the short url
-- Error Checking
-
-Dockerize application and use docker-compose to run it
-
-Deploy to K8s or AWS
-*/

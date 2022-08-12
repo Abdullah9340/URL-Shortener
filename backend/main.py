@@ -40,7 +40,7 @@ class addUrl(Resource):
         url = body["url"]
         myCursor.execute("SELECT * FROM urls WHERE url = %s", (url,))
         if myCursor.rowcount != 0:
-            return {"status": "error", "message": "Url already exists"}
+            return {"status" : "success", "short": myCursor.fetchone()['short']}
         
         short = ""
         while True:

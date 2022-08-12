@@ -6,7 +6,10 @@ export async function getServerSideProps(context) {
   const req = context.req;
   const res = context.res;
   const { url } = context.params;
-  const response = await fetch(`${process.env.NEXT_API_URL}?short=${url}`);
+  console.log;
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}?short=${url}`
+  );
 
   const data = await response.json();
   if (data.error) {
