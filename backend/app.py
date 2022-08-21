@@ -58,5 +58,7 @@ class addUrl(Resource):
 
 api.add_resource(addUrl, '/addUrl')
 api.add_resource(url, '/')
+
 if __name__ == "__main__":
   app.run(port=5000)
+  

@@ -21,6 +21,7 @@ const Modal = ({ setNavigation }) => {
         url
       )
     ) {
+      console.log(process.env.NEXT_PUBLIC_API_URL);
       const fetchUrl = `${process.env.NEXT_PUBLIC_API_URL}/addUrl`;
 
       const response = await fetch(fetchUrl, {

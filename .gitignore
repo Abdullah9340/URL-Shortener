@@ -19,3 +19,5 @@
 /backend/.env
 
 /backend/venv
+/backend/root.crt
+/backend/__pycache__

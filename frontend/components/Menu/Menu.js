@@ -17,7 +17,7 @@ const NavMenu = ({ setNavigation }) => {
   return (
     <div>
       <Button
-        id="basic-button"
+        id="nav-menu-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}

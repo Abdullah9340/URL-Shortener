@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import NavMenu from "../../components/Menu/Menu";
 import { useState } from "react";
+
 const QRModal = ({ setNavigation }) => {
   const [size, setSize] = useState(150);
   const [url, setUrl] = useState("");
