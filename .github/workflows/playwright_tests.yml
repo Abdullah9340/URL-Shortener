@@ -20,11 +20,10 @@ jobs:
 
       - name: "Start flask backend"
         working-directory: backend
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
-          cat .env
           env
           ls
           pip install -r requirements.txt
           python app.py &
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
