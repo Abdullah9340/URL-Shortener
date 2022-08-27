@@ -17,8 +17,7 @@ jobs:
       - name: "CD into backend"
         run: "cd backend"
 
-      - env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
       - name: "Start flask backend"
-        run: "python app.py"
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: "python app.py &"
