@@ -27,10 +27,14 @@ const NavMenu = ({ setNavigation }) => {
       </Button>
 
       <Menu id="nav-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem onClick={handleClose} data-my-value="URL Short">
+        <MenuItem
+          onClick={handleClose}
+          id="URL-option"
+          data-my-value="URL Short"
+        >
           URL Shortener
         </MenuItem>
-        <MenuItem onClick={handleClose} data-my-value="QR CODE">
+        <MenuItem onClick={handleClose} id="QR-option" data-my-value="QR CODE">
           QR Code Generator
         </MenuItem>
       </Menu>

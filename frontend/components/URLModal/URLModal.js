@@ -45,6 +45,7 @@ const Modal = ({ setNavigation }) => {
   return (
     <div className={styles.container}>
       <Snackbar
+        id="URL-snackbar"
         open={error}
         autoHideDuration={6000}
         onClose={handleClose}
@@ -73,7 +74,7 @@ const Modal = ({ setNavigation }) => {
         </Grid>
         <Grid item xs={8}>
           <TextField
-            id="standard-basic"
+            id="URL-input-label"
             label="Original Url"
             variant="standard"
             fullWidth
@@ -83,6 +84,7 @@ const Modal = ({ setNavigation }) => {
         </Grid>
         <Grid item xs={4} textAlign="center">
           <Button
+            id="URL-submit-button"
             variant="contained"
             sx={{
               margin: "auto",
@@ -97,7 +99,7 @@ const Modal = ({ setNavigation }) => {
         </Grid>
         {shortUrl && (
           <Grid item xs={12}>
-            <div className={styles.shortUrl}>
+            <div id="URL-output" className={styles.shortUrl}>
               Short Url: {process.env.NEXT_PUBLIC_URL}/{shortUrl}
             </div>
           </Grid>

@@ -37,6 +37,7 @@ const QRModal = ({ setNavigation }) => {
   return (
     <div className={styles.container}>
       <Snackbar
+        id="QR-snackbar"
         open={error}
         autoHideDuration={6000}
         onClose={handleClose}
@@ -84,17 +85,18 @@ const QRModal = ({ setNavigation }) => {
         </Grid>
         <Grid item xs={8}>
           <TextField
-            id="standard-basic"
             label="Original Url"
             variant="standard"
             fullWidth
             value={url}
             onChange={(event) => setUrl(event.target.value)}
+            id="QR-input-label"
           />
         </Grid>
         <Grid item xs={4} textAlign="center">
           <Button
             variant="contained"
+            id="QR-submit-button"
             sx={{
               margin: "auto",
               marginTop: "10px",
@@ -113,7 +115,7 @@ const QRModal = ({ setNavigation }) => {
             <Grid item xs={12}>
               <div className={styles.qrCode}>
                 <Link href={imageUrl}>
-                  <img src={imageUrl} alt="qr code" />
+                  <img src={imageUrl} alt="qr code" id="QR-image" />
                 </Link>
               </div>
             </Grid>
