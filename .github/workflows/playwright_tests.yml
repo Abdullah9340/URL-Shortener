@@ -15,9 +15,12 @@ jobs:
       - uses: microsoft/playwright-github-action@v1
 
       - name: "CD into backend"
-        run: "cd backend"
+        run: |
+          ls
+          cd backend
+          ls
 
-      - name: "Start flask backend"
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: "python app.py &"
+      # - name: "Start flask backend"
+      #   env:
+      #     DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      #   run: "python app.py &"
