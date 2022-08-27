@@ -12,15 +12,15 @@ jobs:
 
       - uses: actions/setup-node@v1
 
-      - uses: microsoft/playwright-github-action@v1
+      # - uses: microsoft/playwright-github-action@v1
 
-      - name: "CD into backend"
+      - name: "CD into backend and start flask server"
+        run: |
+          cd backend
+
+      - name: "Start flask backend"
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           ls
-          cd backend
-          ls
-
-      # - name: "Start flask backend"
-      #   env:
-      #     DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      #   run: "python app.py &"
+          python app.py &
