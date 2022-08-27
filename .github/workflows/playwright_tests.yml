@@ -21,8 +21,7 @@ jobs:
       - name: "Start flask backend"
         working-directory: backend
         run: |
-          env
-          ls
+          curl --create-dirs -o $HOME/.postgresql/root.crt -O https://cockroachlabs.cloud/clusters/85831b76-682e-41ba-8ecd-9956fe67b9b1/cert
           pip install -r requirements.txt
           python app.py &
         env:
