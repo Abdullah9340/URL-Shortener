@@ -19,7 +19,7 @@ jobs:
       # - uses: microsoft/playwright-github-action@v1
 
       - name: "Start flask backend"
-        working_directory: backend
+        working-directory: backend
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
