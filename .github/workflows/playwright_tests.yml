@@ -12,15 +12,17 @@ jobs:
 
       - uses: actions/setup-node@v1
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
       # - uses: microsoft/playwright-github-action@v1
 
-      - name: "CD into backend and start flask server"
-        run: |
-          cd backend
-
       - name: "Start flask backend"
+        working_directory: backend
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           ls
+          pip install -r requirements.txt
           python app.py &
