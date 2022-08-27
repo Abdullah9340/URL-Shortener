@@ -23,6 +23,8 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
+          cat .env
+          env
           ls
           pip install -r requirements.txt
           python app.py &
