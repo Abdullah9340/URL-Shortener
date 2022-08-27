@@ -20,8 +20,8 @@ jobs:
 
       - name: "Start flask backend"
         working-directory: backend
-        # env:
-        #   # DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           curl --create-dirs -o $HOME/.postgresql/root.crt -O https://cockroachlabs.cloud/clusters/85831b76-682e-41ba-8ecd-9956fe67b9b1/cert
           pip install -r requirements.txt
