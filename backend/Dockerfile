@@ -10,4 +10,4 @@ COPY root.crt /root/.postgresql/root.crt
 COPY app.py /backend-docker/app.py
 
 
-CMD ["python3", "-m", "flask", "run"]
+CMD ["python", "app.py"]

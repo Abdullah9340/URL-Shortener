@@ -14,6 +14,7 @@ const Modal = ({ setNavigation }) => {
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [error, setError] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const shortenURL = async () => {
     if (
@@ -38,6 +39,10 @@ const Modal = ({ setNavigation }) => {
     }
   };
 
+  const copyToClipboard = () => {
+    setIsCopied(true);
+    navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_URL}/${shortUrl}`);
+  };
   const handleClose = () => {
     setError(false);
   };
@@ -98,11 +103,28 @@ const Modal = ({ setNavigation }) => {
           </Button>
         </Grid>
         {shortUrl && (
-          <Grid item xs={12}>
-            <div id="URL-output" className={styles.shortUrl}>
-              Short Url: {process.env.NEXT_PUBLIC_URL}/{shortUrl}
-            </div>
-          </Grid>
+          <>
+            <Grid item xs={8}>
+              <div id="URL-output" className={styles.shortUrl}>
+                Short Url: {process.env.NEXT_PUBLIC_URL}/{shortUrl}
+              </div>
+            </Grid>
+            <Grid item xs={4} textAlign="center">
+              <Button
+                id="URL-copy-button"
+                variant="contained"
+                sx={{
+                  margin: "auto",
+                  marginTop: "10px",
+                  width: "80%",
+                  textTransform: "none",
+                }}
+                onClick={copyToClipboard}
+              >
+                {isCopied ? "Copied" : "Copy"}
+              </Button>
+            </Grid>
+          </>
         )}
       </Grid>
     </div>
