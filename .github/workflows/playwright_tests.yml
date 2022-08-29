@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v1
+      # Specify node version
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
 
       - uses: actions/setup-python@v4
         with:
