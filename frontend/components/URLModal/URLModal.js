@@ -40,9 +40,7 @@ const Modal = ({ setNavigation }) => {
 
   const copyToClipboard = () => {
     setIsCopied(true);
-    navigator.clipboard.writeText(
-      `http://www.short-url2.vercel.app/${shortUrl}`
-    );
+    navigator.clipboard.writeText(`https://short-url2.vercel.app/${shortUrl}`);
   };
   const handleClose = () => {
     setError(false);
@@ -107,7 +105,7 @@ const Modal = ({ setNavigation }) => {
           <>
             <Grid item xs={8}>
               <div id="URL-output" className={styles.shortUrl}>
-                Short Url: http://www.short-url2.vercel.app/{shortUrl}
+                Short Url: https://short-url2.vercel.app/{shortUrl}
               </div>
             </Grid>
             <Grid item xs={4} textAlign="center">
