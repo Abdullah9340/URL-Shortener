@@ -105,7 +105,8 @@ const Modal = ({ setNavigation }) => {
           <>
             <Grid item xs={8}>
               <div id="URL-output" className={styles.shortUrl}>
-                Short Url: https://short-url2.vercel.app/{shortUrl}
+                Short Url: <br />
+                https://short-url2.vercel.app/{shortUrl}
               </div>
             </Grid>
             <Grid item xs={4} textAlign="center">
