@@ -24,7 +24,7 @@ const QRModal = ({ setNavigation }) => {
         url
       )
     ) {
-      const qrCode = `${process.env.NEXT_PUBLIC_API_QR}?size=${size}x${size}&data=${url}`;
+      const qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${url}`;
       setImageUrl(qrCode);
     } else {
       setError(true);

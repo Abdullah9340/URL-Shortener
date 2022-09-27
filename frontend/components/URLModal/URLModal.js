@@ -22,8 +22,7 @@ const Modal = ({ setNavigation }) => {
         url
       )
     ) {
-      console.log(process.env.NEXT_PUBLIC_API_URL);
-      const fetchUrl = `${process.env.NEXT_PUBLIC_API_URL}/addUrl`;
+      const fetchUrl = `https://urlify-react-flask.herokuapp.com/addUrl`;
 
       const response = await fetch(fetchUrl, {
         method: "POST",
@@ -41,7 +40,9 @@ const Modal = ({ setNavigation }) => {
 
   const copyToClipboard = () => {
     setIsCopied(true);
-    navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_URL}/${shortUrl}`);
+    navigator.clipboard.writeText(
+      `https://www.short-url2.vercel.app/${shortUrl}`
+    );
   };
   const handleClose = () => {
     setError(false);

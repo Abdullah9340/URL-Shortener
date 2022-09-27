@@ -15,7 +15,6 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 api = Api(app)
 
-print("OS VAR", os.getenv('DATABASE_URL'))
 db = psycopg2.connect(os.environ["DATABASE_URL"])
 myCursor = db.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
 

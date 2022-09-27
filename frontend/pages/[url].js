@@ -6,9 +6,8 @@ export async function getServerSideProps(context) {
   const req = context.req;
   const res = context.res;
   const { url } = context.params;
-  console.log(process.env.NEXT_PUBLIC_API_URL);
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/?short=${url}`,
+    `https://urlify-react-flask.herokuapp.com/?short=${url}`,
     {
       method: "GET",
       headers: {
